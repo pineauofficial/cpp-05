@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:36:54 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/23 18:35:21 by pineau           ###   ########.fr       */
+/*   Updated: 2024/02/23 18:40:36 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ int main(void)
 	catch(std::exception const & e) {
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << a << std::endl;
 	return 0;
 }
