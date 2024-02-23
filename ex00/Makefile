@@ -6,19 +6,20 @@
 #    By: pineau <pineau@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 14:17:43 by nasamadi          #+#    #+#              #
-#    Updated: 2024/02/23 16:34:52 by pineau           ###   ########.fr        #
+#    Updated: 2024/02/23 18:17:36 by pineau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ### PROGRAM ###
-NAME		= 
+NAME		= bureaucrat
 
 ### SOURCES ###
 SRC_DIR		= sources/
 OBJ_DIR		= .objs/
 INCLUDES	= includes/
 
-SRC		=	
+SRC		=	main.cpp \
+			Bureaucrat.cpp \
 			
 
 
