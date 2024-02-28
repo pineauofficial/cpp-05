@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:37:40 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/24 16:22:21 by pineau           ###   ########.fr       */
+/*   Updated: 2024/02/28 16:57:29 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ class Bureaucrat {
 		void incrementGrade();
 		void decrementGrade();
 		void signForm(AForm &rhs);
+		void executeForm(AForm &rhs) const;
 		
 		std::string getName() const;
 		int getGrade() const;

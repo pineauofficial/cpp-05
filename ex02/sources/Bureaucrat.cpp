@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:37:26 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/24 15:38:40 by pineau           ###   ########.fr       */
+/*   Updated: 2024/02/28 16:57:45 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void Bureaucrat::decrementGrade() {
 		throw GradeTooLowException();
 }
 
-void	Bureaucrat::signForm(Form &rhs)
+void	Bureaucrat::signForm(AForm &rhs)
 {
 	try
 	{
@@ -55,6 +55,19 @@ void	Bureaucrat::signForm(Form &rhs)
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(AForm & rhs) const
+{
+	try
+	{
+		rhs.execute(*this);
+		std::cout << _name << " executed " << rhs.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << _name << " couldn't execute " << rhs.getName() << " because " << e.what() << std::endl;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 18:46:01 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/24 16:24:20 by pineau           ###   ########.fr       */
+/*   Updated: 2024/02/28 17:03:00 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include "Bureaucrat.hpp"
+#include <ostream>
 
 class	Bureaucrat;
 
@@ -35,11 +36,20 @@ class AForm {
 					return ("Grade is too low");
 				}		
 		};
+		class FormNotSignedException : public std::exception {
+			public:
+				const char * what() const throw()
+				{
+					return ("Form is not signed");
+				}		
+		};
 
 		AForm(std::string name, bool toSign,int signGrade, int execGrade);
-		~AForm();
+		virtual ~AForm();
 
-		void		beSigned(Bureaucrat const &rhs) = 0;
+		void			beSigned(Bureaucrat const &rhs);
+		virtual void	execute(Bureaucrat const &executor) const = 0;
+		void			executeCheck(Bureaucrat const & executor) const;
 
 		std::string getName() const;
 		bool		getToSign() const;

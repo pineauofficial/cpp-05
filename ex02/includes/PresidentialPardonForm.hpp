@@ -6,12 +6,15 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:28:00 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/24 16:45:17 by pineau           ###   ########.fr       */
+/*   Updated: 2024/02/28 17:25:06 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
+
+# include "AForm.hpp"
+
 
 class PresidentialPardonForm : public AForm {
 	public:
@@ -20,6 +23,14 @@ class PresidentialPardonForm : public AForm {
 		~PresidentialPardonForm();
 		PresidentialPardonForm(PresidentialPardonForm const & src);
 		PresidentialPardonForm & operator=(PresidentialPardonForm const & rhs);
+
+		void	execute(Bureaucrat const & executor) const;
+		std::string getTarget() const;
+		
+	private:
+		std::string const _target;
 };
+
+std::ostream &operator<<(std::ostream &ost, const PresidentialPardonForm &rhs);
 
 #endif
