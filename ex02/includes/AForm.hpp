@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 18:46:01 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/28 17:03:00 by pineau           ###   ########.fr       */
+/*   Updated: 2024/03/29 14:44:20 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ class AForm {
 
 		AForm(std::string name, bool toSign,int signGrade, int execGrade);
 		virtual ~AForm();
+		AForm(AForm const & rhs);
+		AForm & operator=(AForm const & rhs);
 
 		void			beSigned(Bureaucrat const &rhs);
 		virtual void	execute(Bureaucrat const &executor) const = 0;

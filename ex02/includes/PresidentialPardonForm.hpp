@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:28:00 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/28 17:25:06 by pineau           ###   ########.fr       */
+/*   Updated: 2024/03/29 14:46:07 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class PresidentialPardonForm : public AForm {
 
 		void	execute(Bureaucrat const & executor) const;
 		std::string getTarget() const;
+		
+		
 		
 	private:
 		std::string const _target;

@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:37:40 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/23 18:27:33 by pineau           ###   ########.fr       */
+/*   Updated: 2024/03/29 14:41:50 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@ class Bureaucrat {
 		
 		Bureaucrat(std::string name, int grade);
 		~Bureaucrat();
+		Bureaucrat(Bureaucrat const & rhs);
 		Bureaucrat & operator<<(Bureaucrat const & rhs);
-
+		Bureaucrat & operator=(Bureaucrat const & rhs);
+		
 		void incrementGrade();
 		void decrementGrade();
 		

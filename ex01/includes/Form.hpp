@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 18:46:01 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/24 15:43:08 by pineau           ###   ########.fr       */
+/*   Updated: 2024/03/29 14:43:08 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ class Form {
 
 		Form(std::string name, bool toSign,int signGrade, int execGrade);
 		~Form();
+		Form(Form const & rhs);
+		Form & operator=(Form const & rhs);
 
 		void		beSigned(Bureaucrat const &rhs);
 

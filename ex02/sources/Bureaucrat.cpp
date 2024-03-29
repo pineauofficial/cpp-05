@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:37:26 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/28 16:57:45 by pineau           ###   ########.fr       */
+/*   Updated: 2024/03/29 14:44:53 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,17 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 
 Bureaucrat::~Bureaucrat() {
 	// std::cout << "Bureaucrat destructor called" << std::endl;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat const & rhs) : _name(rhs.getName()), _grade(rhs.getGrade()) {
+	// std::cout << "Bureaucrat copy constructor called" << std::endl;
+}
+
+Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
+	// std::cout << "Bureaucrat assignation operator called" << std::endl;
+	if (this != &rhs)
+		_grade = rhs.getGrade();
+	return *this;
 }
 
 int Bureaucrat::getGrade() const {

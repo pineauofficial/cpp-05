@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 18:46:36 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/28 17:02:24 by pineau           ###   ########.fr       */
+/*   Updated: 2024/03/29 14:47:01 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,17 @@ AForm::AForm(std::string name, bool toSign, int signGrade, int execGrade) : _nam
 
 AForm::~AForm() {
 	// std::cout << "Form destructor called" << std::endl;
+}
+
+AForm::AForm(AForm const & rhs) : _name(rhs.getName()), _toSign(rhs.getToSign()), _signGrade(rhs.getSignGrade()), _execGrade(rhs.getExecGrade()) {
+	// std::cout << "Form copy constructor called" << std::endl;
+}
+
+AForm & AForm::operator=(AForm const & rhs) {
+	// std::cout << "Form assignation operator called" << std::endl;
+	if (this != &rhs)
+		_toSign = rhs.getToSign();
+	return *this;
 }
 
 std::string AForm::getName() const {
